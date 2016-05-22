@@ -7,10 +7,6 @@ go:
 env:
   - TRAVIS_NODE_VERSION="6.2.0"
 
-before_install:
-  - go get github.com/mattn/goveralls
-  - go get golang.org/x/tools/cmd/cover
-
 before_script:
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
   - npm install --legacy-bundling
@@ -24,6 +20,3 @@ install:
   # Add Godeps dependencies to GOPATH and PATH
   - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
   - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
-
-script:
-  - COVERALLS="-service travis-ci -repotoken $COVERALLS_TOKEN" "${TRAVIS_BUILD_DIR}"/scripts/get_test_coverage.sh
