@@ -10,6 +10,7 @@ before_install:
 
 before_script:
   - npm install
+  - npm run webpack
   - npm run lint-js
   - go get -u github.com/golang/lint/golint
   - golint -set_exit_status ./app/...
