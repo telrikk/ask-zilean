@@ -1,4 +1,4 @@
-package tests
+package functional_test
 
 import "github.com/revel/revel/testing"
 

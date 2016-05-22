@@ -22,3 +22,17 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+bower_components
+node_modules
+dist/js/*
+dist/css/*
+!dist/css/.gitkeep
+!dist/js/.gitkeep
+.sass-cache
+npm-debug.log
+app/tmp/*
+dist
+
+Gododir/godobin*
+app/routes/* # generated code
