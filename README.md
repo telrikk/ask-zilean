@@ -1,30 +1,19 @@
-# Welcome to Revel
+ask-zilean
+==========
 
-## Getting Started
+[![Build Status](https://travis-ci.org/telrikk/adk-zilean.svg?branch=master)](https://travis-ci.org/telrikk/ask-zilean)
+[![Go Report Card](https://goreportcard.com/badge/github.com/telrikk/ask-zilean)](https://goreportcard.com/report/github.com/telrikk/ask-zilean)
+[![GoDoc](https://godoc.org/github.com/telrikk/ask-zilean?status.svg)](http://godoc.org/github.com/telrikk/ask-zilean)
 
-A high-productivity web framework for the [Go language](http://www.golang.org/).
+Description
+-----------
 
-### Start the web server:
+A platform for self improvement in League of Legends.
 
-    revel run myapp
+Getting Started
+---------------
 
-   Run with <tt>--help</tt> for options.
-
-### Go to http://localhost:9000/ and you'll see:
-
-"It works"
-
-### Follow the guidelines to start developing your application:
-
-* The README file created within your application.
-* The [Getting Started with Revel](http://revel.github.io/tutorial/index.html).
-* The [Revel guides](http://revel.github.io/manual/index.html).
-* The [Revel sample apps](http://revel.github.io/samples/index.html).
-* The [API documentation](http://revel.github.io/docs/godoc/index.html).
-
-## Contributing
-We encourage you to contribute to Revel! Please check out the [Contributing to Revel
-guide](https://github.com/revel/revel/blob/master/CONTRIBUTING.md) for guidelines about how
-to proceed. [Join us](https://groups.google.com/forum/#!forum/revel-framework)!
-
-TODO: npm install --legacy-bundling?
+1) Install [node.js](https://nodejs.org/en/)
+2) npm install --legacy-bundling
+3) Run server in development mode (godo development)
+4) Go to http://localhost:9000
