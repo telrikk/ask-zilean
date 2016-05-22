@@ -6,7 +6,7 @@ import (
 
 func tasks(p *do.Project) {
 
-	p.Task("development", do.S{"build", do.P{"webpack", "server"}}, nil)
+	p.Task("development", do.S{"build", do.P{0: "webpack", 1: "server"}}, nil)
 
 	p.Task("build", do.S{}, func(c *do.Context) {
 		c.Run("go fmt ./...", do.M{"$in": "./"})

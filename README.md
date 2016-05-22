@@ -13,7 +13,7 @@ A platform for self improvement in League of Legends.
 Getting Started
 ---------------
 
-1) Install [node.js](https://nodejs.org/en/)
-2) npm install --legacy-bundling
-3) Run server in development mode (godo development)
-4) Go to http://localhost:9000
+1. Install [node.js](https://nodejs.org/en/)
+2. npm install --legacy-bundling
+3. Run server in development mode (godo development)
+4. Go to http://localhost:9000
