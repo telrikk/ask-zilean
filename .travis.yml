@@ -1,0 +1,23 @@
+language: go
+sudo: false
+
+go:
+  - 1.6.2
+
+before_install:
+  - go get github.com/mattn/goveralls
+  - go get golang.org/x/tools/cmd/cover
+
+before_script:
+  - npm run lint-js
+  - go get -u github.com/golang/lint/golint
+  - golint -set_exit_status ./app/...
+  - go vet ./app/...
+
+install:
+  # Add Godeps dependencies to GOPATH and PATH
+  - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
+  - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
+
+script:
+  - COVERALLS="-service travis-ci -repotoken $COVERALLS_TOKEN" "${TRAVIS_BUILD_DIR}"/scripts/get_test_coverage.sh
