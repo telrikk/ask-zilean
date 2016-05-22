@@ -1,0 +1,42 @@
+{
+  "name": "ask-zilean",
+  "version": "1.0.0",
+  "scripts": {
+    "lint-js": "eslint ./public/**/*.js",
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.6.5",
+    "babel-core": "~6.9.0",
+    "babel-loader": "~6.2.4",
+    "babel-preset-es2015": "~6.9.0",
+    "bootstrap-webpack": "0.0.5",
+    "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
+    "eslint": "~2.10.2",
+    "eslint-config-airbnb": "~9.0.1",
+    "eslint-import-resolver-webpack": "~0.2.4",
+    "eslint-loader": "~1.3.0",
+    "eslint-plugin-import": "~1.8.0",
+    "eslint-plugin-jsx-a11y": "~1.2.2",
+    "eslint-plugin-react": "~5.1.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "mocha": "^2.4.5",
+    "node-sass": "^3.7.0",
+    "sass-loader": "^3.2.0",
+    "sinon": "^1.17.4",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "~1.13.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4",
+    "lodash": "^4.12.0",
+    "react": "^15.1.0"
+  }
+}
