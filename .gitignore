@@ -35,4 +35,5 @@ app/tmp/*
 dist
 
 Gododir/godobin*
-app/routes/* # generated code
+app/routes
+test-results
