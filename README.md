@@ -1,7 +1,7 @@
 ask-zilean
 ==========
 
-[![Build Status](https://travis-ci.org/telrikk/adk-zilean.svg?branch=master)](https://travis-ci.org/telrikk/ask-zilean)
+[![Build Status](https://travis-ci.org/telrikk/ask-zilean.svg?branch=master)](https://travis-ci.org/telrikk/ask-zilean)
 [![Go Report Card](https://goreportcard.com/badge/github.com/telrikk/ask-zilean)](https://goreportcard.com/report/github.com/telrikk/ask-zilean)
 [![GoDoc](https://godoc.org/github.com/telrikk/ask-zilean?status.svg)](http://godoc.org/github.com/telrikk/ask-zilean)
 
