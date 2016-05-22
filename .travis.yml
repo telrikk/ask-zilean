@@ -9,6 +9,7 @@ before_install:
   - go get golang.org/x/tools/cmd/cover
 
 before_script:
+  - npm install
   - npm run lint-js
   - go get -u github.com/golang/lint/golint
   - golint -set_exit_status ./app/...
