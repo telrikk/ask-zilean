@@ -20,7 +20,7 @@ func tasks(p *do.Project) {
 	})
 
 	p.Task("webpack", do.S{}, func(c *do.Context) {
-		c.Run("npm run webpack", do.M{"$in": "./"})
+		c.Run("npm run webpack-watch", do.M{"$in": "./"})
 	})
 }
 

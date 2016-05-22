@@ -53,7 +53,6 @@ module.exports = {
       path.resolve(__dirname, './public/js/'),
     ],
   },
-  watch: true,
   sassLoader: {
     includePaths: [path.resolve(__dirname, './public/sass')],
   },

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "lint-js": "eslint ./public/**/*.js",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch"
   },
   "devDependencies": {
     "babel-cli": "~6.6.5",
