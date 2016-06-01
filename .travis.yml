@@ -29,3 +29,17 @@ install:
 script:
   - go test ./app/...
   - revel test github.com/telrikk/ask-zilean
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: ${AWS_ACCESS_KEY}
+  secret_access_key:
+    secure: ${AWS_SECRET_KEY}
+  region: us-east-1
+  app: Ask Zilean
+  env: askzilean-env
+  bucket_name: elasticbeanstalk-us-east-1-364043192931
+  skip_cleanup: true
+  # on:
+  #   repo: telrikk/ask-zilean
+  #   branch: master
