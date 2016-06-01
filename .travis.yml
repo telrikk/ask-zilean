@@ -40,6 +40,6 @@ deploy:
   env: askzilean-env
   bucket_name: elasticbeanstalk-us-east-1-364043192931
   skip_cleanup: true
-  # on:
-  #   repo: telrikk/ask-zilean
-  #   branch: master
+  on:
+    repo: telrikk/ask-zilean
+    branch: deployment
