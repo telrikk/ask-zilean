@@ -1,0 +1,184 @@
+{
+	"ImportPath": "github.com/telrikk/ask-zilean",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v62",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/MichaelTJones/walk",
+			"Rev": "3af09438b0ab0e8f296410bfa646a7e635ea1fc0"
+		},
+		{
+			"ImportPath": "github.com/agtorre/gocolorize",
+			"Comment": "v1.0.0",
+			"Rev": "f42b554bf7f006936130c9bb4f971afd2d87f671"
+		},
+		{
+			"ImportPath": "github.com/howeyc/gopass",
+			"Rev": "66487b23f2880ba32e185121d2cd51a338ea069a"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-colorable",
+			"Rev": "9cbef7c35391cca05f15f8181dc0b18bc9736dbb"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-isatty",
+			"Rev": "56b76bdf51f7708750eac80fa38b952bb9f32639"
+		},
+		{
+			"ImportPath": "github.com/mgutz/ansi",
+			"Rev": "c286dcecd19ff979eeb73ea444e479b903f2cfcb"
+		},
+		{
+			"ImportPath": "github.com/mgutz/minimist",
+			"Rev": "39eb8cf573ca29344bd7d7e6ba4d7febdebd37a9"
+		},
+		{
+			"ImportPath": "github.com/mgutz/str",
+			"Comment": "1.1.0-4-g968bf66",
+			"Rev": "968bf66e3da857419e4f6e71b2d5c9ae95682dc4"
+		},
+		{
+			"ImportPath": "github.com/mgutz/to",
+			"Rev": "2a0bcba0661696e339461f5efb2273f4459dd1b9"
+		},
+		{
+			"ImportPath": "github.com/nozzle/throttler",
+			"Comment": "v0.3-5-gd9b45f1",
+			"Rev": "d9b45f19996c645d38c9266d1f5cf1990e930119"
+		},
+		{
+			"ImportPath": "github.com/revel/modules/static/app/controllers",
+			"Comment": "v0.12.0",
+			"Rev": "3589d5bf1d1b6da10a88c53701db2af12dfc0811"
+		},
+		{
+			"ImportPath": "github.com/revel/modules/testrunner/app",
+			"Comment": "v0.12.0",
+			"Rev": "3589d5bf1d1b6da10a88c53701db2af12dfc0811"
+		},
+		{
+			"ImportPath": "github.com/revel/modules/testrunner/app/controllers",
+			"Comment": "v0.12.0",
+			"Rev": "3589d5bf1d1b6da10a88c53701db2af12dfc0811"
+		},
+		{
+			"ImportPath": "github.com/revel/revel",
+			"Comment": "v0.12.0-3-ga9a2ff4",
+			"Rev": "a9a2ff45fae4330ef4116b257bcf9c82e53350c2"
+		},
+		{
+			"ImportPath": "github.com/revel/revel/testing",
+			"Comment": "v0.12.0-3-ga9a2ff4",
+			"Rev": "a9a2ff45fae4330ef4116b257bcf9c82e53350c2"
+		},
+		{
+			"ImportPath": "github.com/robfig/config",
+			"Rev": "0f78529c8c7e3e9a25f15876532ecbc07c7d99e6"
+		},
+		{
+			"ImportPath": "github.com/robfig/pathtree",
+			"Rev": "41257a1839e945fce74afd070e02bab2ea2c776a"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/champion",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/championmastery",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/currentgame",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/featuredgames",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/game",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/match",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/matchlist",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/staticdata",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/stats",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/status",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/summoner",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/teams",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "github.com/telrikk/lol-go-api/util",
+			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ssh/terminal",
+			"Rev": "1777f3ba8c1fed80fcaec3317e3aaa4f627764d2"
+		},
+		{
+			"ImportPath": "golang.org/x/net/websocket",
+			"Rev": "8a52c78636f6b7be1b1e5cb58b01a85f1e082659"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "c8bc69bc2db9c57ccf979550bc69655df5039a8a"
+		},
+		{
+			"ImportPath": "gopkg.in/fsnotify.v1",
+			"Comment": "v1.3.0",
+			"Rev": "30411dbcefb7a1da7e84f75530ad3abe4011b4f8"
+		},
+		{
+			"ImportPath": "gopkg.in/godo.v2",
+			"Comment": "v2.0.9",
+			"Rev": "b5fd2f0bef1ebe832e628cfad18ab1cc707f65a1"
+		},
+		{
+			"ImportPath": "gopkg.in/godo.v2/glob",
+			"Comment": "v2.0.9",
+			"Rev": "b5fd2f0bef1ebe832e628cfad18ab1cc707f65a1"
+		},
+		{
+			"ImportPath": "gopkg.in/godo.v2/util",
+			"Comment": "v2.0.9",
+			"Rev": "b5fd2f0bef1ebe832e628cfad18ab1cc707f65a1"
+		},
+		{
+			"ImportPath": "gopkg.in/godo.v2/watcher",
+			"Comment": "v2.0.9",
+			"Rev": "b5fd2f0bef1ebe832e628cfad18ab1cc707f65a1"
+		},
+		{
+			"ImportPath": "gopkg.in/godo.v2/watcher/fswatch",
+			"Comment": "v2.0.9",
+			"Rev": "b5fd2f0bef1ebe832e628cfad18ab1cc707f65a1"
+		}
+	]
+}
