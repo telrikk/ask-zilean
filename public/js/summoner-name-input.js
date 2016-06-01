@@ -4,7 +4,12 @@ import $ from 'jquery';
 export default class SummonerNameInput extends React.Component {
   constructor() {
     super();
-    this.state = { name: '' };
+    this.state = {
+      name: '',
+      buttonText: 'Search',
+      errorText: '',
+      isSearchComplete: false,
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
   }
@@ -17,24 +22,31 @@ export default class SummonerNameInput extends React.Component {
     if (!name) {
       return;
     }
+    this.setState({ errorText: '', buttonText: 'Loading...' });
     $.get({
       url: `/recentgames?name=${name}`,
-      success: this.props.onSuccess,
-      error(xhr) {
+      success: (data) => {
+        this.props.onSuccess(data);
+        this.setState({ isSearchComplete: true });
+      },
+      error: xhr => {
         if (xhr.status === 404) {
-          $('.form-group').addClass('has-error');
-          $('.help-block').html(`Could not find summoner with name ${name}`);
+          this.setState({ errorText: `Could not find summoner with name ${name}` });
         } else {
-          $('.form-group').addClass('has-error');
-          $('.help-block').html('Internal server error. Please try again soon.');
+          this.setState({ errorText: 'Internal server error. Please try again soon.' });
         }
+        this.setState({ buttonText: 'Search' });
       },
     });
   }
   render() {
+    let formGroupClass = 'form-group';
+    if (this.state.errorText) {
+      formGroupClass += ' has-error';
+    }
     return (
-      <form>
-        <div className="form-group">
+      <form className={this.state.isSearchComplete ? 'hidden' : ''}>
+        <div className={formGroupClass}>
           <div className="summoner-name-input input-group">
             <input
               type="text"
@@ -44,11 +56,13 @@ export default class SummonerNameInput extends React.Component {
             />
             <span className="input-group-btn">
               <button onClick={this.handleSubmit} type="submit" className="btn btn-primary">
-                Search
+                {this.state.buttonText}
               </button>
             </span>
           </div>
-          <p className="help-block" />
+          <p className="help-block">
+            {this.state.errorText}
+          </p>
         </div>
       </form>
     );

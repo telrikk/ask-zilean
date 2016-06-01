@@ -1,23 +1,25 @@
 import React from 'react';
 import SummonerNameInput from 'summoner-name-input';
 import RecentGamesList from 'recent-games-list';
-import $ from 'jquery';
 
 export default class GameBox extends React.Component {
   constructor() {
     super();
-    this.state = { recentGames: [] };
+    this.state = { recentGames: [], isSearchComplete: false };
     this.onRecentGamesLoad = this.onRecentGamesLoad.bind(this);
   }
   onRecentGamesLoad(data) {
-    this.setState({ recentGames: data.results });
-    $('.summoner-name-input').hide();
+    this.setState({ recentGames: data.results, searchComplete: true });
   }
   render() {
+    let className = '';
+    if (this.state.isSearchComplete) {
+      className = 'hidden';
+    }
     return (
-      <div className="game-box centered bordered shadowed">
+      <div id="game-box">
         <RecentGamesList recentGames={this.state.recentGames} />
-        <SummonerNameInput onSuccess={this.onRecentGamesLoad} />
+        <SummonerNameInput className={className} onSuccess={this.onRecentGamesLoad} />
       </div>
     );
   }

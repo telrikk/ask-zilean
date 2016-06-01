@@ -1,6 +1,10 @@
 require('bootstrap-webpack');
 require('../sass/main.sass');
 require('../img/favicon.png');
+require('../img/score.png');
+require('../img/items.png');
+require('../img/minion.png');
+require('../img/gold.png');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from 'header';

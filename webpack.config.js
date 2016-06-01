@@ -5,7 +5,7 @@ module.exports = {
   entry: ['./public/js/main.js'],
   output: {
     path: `${__dirname}/dist`,
-    publicPath: 'http://localhost:9000/',
+    publicPath: 'http://localhost:9000/public/',
     filename: './js/[name].js',
   },
   module: {
@@ -15,15 +15,19 @@ module.exports = {
         loader: 'eslint-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(ttf|otf|eot|svg|png|jpg|gif)$/,
+        loader: 'file-loader?name=img/[name].[ext]',
+      },
     ],
     loaders: [
       {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
+        test: /\.(ttf|otf|eot|svg|png|jpg|gif)$/,
+        loader: 'url-loader?prefix=public/img/',
       },
       {
-        test: /\.(ttf|png|otf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?|(jpg|gif)$/,
-        loader: 'file-loader?name=img/[name].[ext]',
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9]|)?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
       },
       {
         test: /\.js$/,
