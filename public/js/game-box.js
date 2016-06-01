@@ -19,6 +19,7 @@ export default class GameBox extends React.Component {
     return (
       <div id="game-box">
         <RecentGamesList recentGames={this.state.recentGames} />
+        // FIXME: this relationship is a bit awkward and leads to styling issues
         <SummonerNameInput className={className} onSuccess={this.onRecentGamesLoad} />
       </div>
     );

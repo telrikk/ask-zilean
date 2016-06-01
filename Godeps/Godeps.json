@@ -84,59 +84,59 @@
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/champion",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/championmastery",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/currentgame",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/featuredgames",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/game",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/match",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/matchlist",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/staticdata",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/stats",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/status",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/summoner",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/teams",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "github.com/telrikk/lol-go-api/util",
-			"Rev": "72c4740f74e1aeaee9089b13f02036c03bd33b00"
+			"Rev": "29b00125885e84e6f4842d73b810daf10bb4ae72"
 		},
 		{
 			"ImportPath": "golang.org/x/crypto/ssh/terminal",

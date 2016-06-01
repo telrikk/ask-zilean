@@ -15,15 +15,11 @@ module.exports = {
         loader: 'eslint-loader',
         exclude: /node_modules/,
       },
-      {
-        test: /\.(ttf|otf|eot|svg|png|jpg|gif)$/,
-        loader: 'file-loader?name=img/[name].[ext]',
-      },
     ],
     loaders: [
       {
         test: /\.(ttf|otf|eot|svg|png|jpg|gif)$/,
-        loader: 'url-loader?prefix=public/img/',
+        loader: 'file-loader?name=img/[name].[ext]',
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9]|)?$/,
