@@ -16,6 +16,8 @@ before_script:
   - npm run webpack
   - npm run lint-js
   - go get -u github.com/golang/lint/golint
+  - go get github.com/tools/godep
+  - godep restore
   - golint -set_exit_status ./app/...
   - go vet ./app/...
 
