@@ -35,8 +35,8 @@ before_deploy:
   - rm -rf node_modules
   - cp -R ./ /tmp/deploy/github.com/telrikk/ask-zilean/
   - cd /tmp/deploy/
-  - echo 'build: go get -u github.com/revel/cmd/revel' > Buildfile
-  - echo 'web: revel run github.com/telrikk/ask-zilean' > Procfile
+  - cp /tmp/deploy/github.com/telrikk/ask-zilean/Procfile ./
+  - cp /tmp/deploy/github.com/telrikk/ask-zilean/Buildfile ./
   - zip ${TRAVIS_BUILD_DIR}/deploy.zip -x'github.com/telrikk/ask-zilean/node_modules/*' -r ./
   - cd ${TRAVIS_BUILD_DIR}
 
