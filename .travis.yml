@@ -31,7 +31,9 @@ script:
   - revel test github.com/telrikk/ask-zilean
 
 before_deploy:
-  - zip deploy.zip -x'node_modules/*' -r ./
+  - mkdir -p github.com/telrikk/ask-zilean/
+  - mv *.* github.com/telrikk/ask-zilean/
+  - zip deploy.zip -x'github.com/telrikk/ask-zilean/node_modules/*' -r ./
 
 deploy:
   provider: elasticbeanstalk
