@@ -14,8 +14,11 @@ export default function RecentGame(props) {
   const assists = props.game.summoner.kills;
   const creepScore = props.game.summoner.creepScore;
   const gold = props.game.summoner.gold;
+  const isWinner = props.game.summoner.isWinner;
+  const barClass = isWinner ? 'results-bar-victory' : 'results-bar-defeat';
   return (
     <li className="list-group-item">
+      <span className={barClass} />
       <span>
         <span className="champion">
           <span className="centered-image-helper" />
@@ -25,8 +28,12 @@ export default function RecentGame(props) {
             src={props.game.summoner.championImageURL}
           />
         </span>
+        <span className="queue-description">
+          <div>{props.game.mapName}</div>
+          <div>{props.game.queueDescription}</div>
+        </span>
         <span className="score">
-          {`${kills}-${deaths}-${assists}`}
+          {`${kills}/${deaths}/${assists}`}
         </span>
         <span className="minions">
           {creepScore}
@@ -43,7 +50,6 @@ export default function RecentGame(props) {
           </span>
         </span>
       </span>
-      <span className="glyphicon glyphicon-chevron-right pull-right" />
     </li>
   );
 }

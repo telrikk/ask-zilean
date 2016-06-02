@@ -10,6 +10,54 @@ import (
 	"github.com/telrikk/lol-go-api/match"
 )
 
+var queueDescriptions = map[string]string{
+	"ARAM_5x5":                        "(ARAM)",
+	"BILGEWATER_5x5":                  "(Bilgewater)",
+	"BILGEWATER_ARAM_5x5":             "(ARAM)",
+	"ASCENSION_5x5":                   "(Ascension)",
+	"NORMAL_5x5_BLIND":                "(Blind)",
+	"BOT_5x5":                         "(Bots)",
+	"BOT_5x5_BEGINNER":                "(Bots)",
+	"BOT_5x5_INTERMEDIATE":            "(Bots)",
+	"BOT_5x5_INTRO":                   "(Bots)",
+	"BOT_TT_3x3":                      "(Bots)",
+	"BOT_ODIN_5x5":                    "(Bots)",
+	"BOT_URF_5x5":                     "(Bots)",
+	"COUNTER_PICK":                    "(Counter Pick)",
+	"CUSTOM":                          "(Custom)",
+	"NORMAL_5x5_DRAFT":                "(Draft)",
+	"FIRSTBLOOD_1x1":                  "(First Blood)",
+	"FIRSTBLOOD_2x2":                  "(First Blood)",
+	"HEXAKILL":                        "(Hexakill)",
+	"KING_PORO_5x5":                   "(King Poro)",
+	"SR_6x6":                          "(Hexakill)",
+	"NIGHTMARE_BOT_5x5_RANK1":         "(Bots)",
+	"NIGHTMARE_BOT_5x5_RANK5":         "(Bots)",
+	"NIGHTMARE_BOT_5x5_RANK2":         "(Bots)",
+	"ODIN_5x5_BLIND":                  "(Dominion)",
+	"ODIN_5x5_DRAFT":                  "(Odin)",
+	"ONEFORALL_MIRRORMODE_5x5":        "(One For All)",
+	"ONEFORALL_5x5":                   "(One For All)",
+	"RANKED_PREMADE_3x3":              "(Team Ranked)",
+	"RANKED_PREMADE_5x5":              "(Team Ranked)",
+	"RANKED_SOLO_5x5":                 "(Ranked)",
+	"RANKED_TEAM_5x5":                 "(Team Ranked)",
+	"RANKED_TEAM_3x3":                 "(Team Ranked)",
+	"NORMAL_3x3":                      "(Normal)",
+	"GROUP_FINDER_5x5":                "(Team Builder)",
+	"TEAM_BUILDER_DRAFT_UNRANKED_5x5": "(Normal)",
+	"TEAM_BUILDER_DRAFT_RANKED_5x5":   "(Ranked)",
+	"URF_5x5":                         "(URF)",
+}
+
+var mapNames = map[string]string{
+	"NewTwistedTreeline": "Twisted Treeline",
+	"SummonersRift":      "Summoner's Rift",
+	"CrystalScar":        "CrystalScar",
+	"SummonersRiftNew":   "Summoner's Rift",
+	"ProvingGroundsNew":  "Proving Grounds",
+}
+
 // RecentGames returns json with recent game information
 func (c App) RecentGames(name string) revel.Result {
 	summonerID, err := model.GetSummonerID(name)
@@ -61,13 +109,23 @@ func translateRecentGame(game game.Game, gameData map[int]match.Detail, summoner
 	}
 	mapImageName := util.MapData().Data[strconv.Itoa(game.MapID)].Image.Full
 	translatedGame.MapImageURL = util.MapImagePrefix() + "map/" + mapImageName
-	translatedGame.MapName = util.MapData().Data[strconv.Itoa(game.MapID)].MapName
 	translatedGame.ID = game.GameID
 	translatedGame.GoldImageURL = "/public/img/gold.png"
 	translatedGame.ChampionImageURL = util.UIImagePrefix() + "ui/champion.png"
 	translatedGame.StatsImageURL = "/public/img/score.png"
 	translatedGame.ItemsImageURL = "/public/img/items.png"
 	translatedGame.CreepScoreImageURL = "/public/img/minion.png"
+	rawMapName := util.MapData().Data[strconv.Itoa(game.MapID)].MapName
+	readableMapName, ok := mapNames[rawMapName]
+	if !ok {
+		readableMapName = "Unknown Map"
+	}
+	translatedGame.MapName = readableMapName
+	description, ok := queueDescriptions[fullGame.QueueType]
+	if !ok {
+		description = "(Other)"
+	}
+	translatedGame.QueueDescription = description
 	return *translatedGame
 }
 
@@ -89,6 +147,7 @@ func translatePlayer(player match.Participant, nameData map[int]string) model.Pl
 	}
 	translatedPlayer.CreepScore = player.Stats.MinionsKilled + player.Stats.NeutralMinionsKilled
 	translatedPlayer.Gold = player.Stats.GoldEarned
+	translatedPlayer.IsWinner = player.Stats.Winner
 	return *translatedPlayer
 }
 
