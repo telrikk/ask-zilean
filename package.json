@@ -4,7 +4,9 @@
   "scripts": {
     "lint-js": "eslint ./public/**/*.js",
     "webpack": "webpack",
-    "webpack-watch": "webpack --watch"
+    "webpack-watch": "webpack --watch",
+    "webpack-production": "webpack --config webpack.production.config.js",
+    "uglify": "uglify -s dist/js/main.js -o dist/js/main.js"
   },
   "devDependencies": {
     "babel-cli": "~6.8.0",
@@ -32,6 +34,7 @@
     "sass-loader": "^3.2.0",
     "sinon": "^1.17.4",
     "style-loader": "^0.13.1",
+    "uglify": "^0.1.5",
     "url-loader": "^0.5.7",
     "webpack": "~1.13.1"
   },
