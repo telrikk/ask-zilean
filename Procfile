@@ -1,1 +1,1 @@
-web: killall revel && revel run github.com/telrikk/ask-zilean prod
+web: revel run github.com/telrikk/ask-zilean prod
