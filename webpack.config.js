@@ -5,7 +5,7 @@ module.exports = {
   entry: ['./public/js/main.js'],
   output: {
     path: `${__dirname}/dist`,
-    publicPath: 'http://localhost:9000/public/',
+    publicPath: 'http://localhost:5000/public/',
     filename: './js/[name].js',
   },
   module: {

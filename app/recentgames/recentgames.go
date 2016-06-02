@@ -25,12 +25,14 @@ type Player struct {
 	Items            []Item `json:"items"`
 	CreepScore       int    `json:"creepScore"`
 	Gold             int    `json:"gold"`
+	IsWinner         bool   `json:"isWinner"`
 }
 
 // RecentGame is a recently played game
 type RecentGame struct {
 	MapImageURL        string   `json:"mapImageURL"`
 	MapName            string   `json:"mapName"`
+	QueueDescription   string   `json:"queueDescription"`
 	Players            []Player `json:"players"` // all players in the game
 	ID                 int      `json:"id"`
 	Summoner           Player   `json:"summoner"` // the summoner who is using the app

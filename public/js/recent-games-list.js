@@ -21,6 +21,7 @@ export default function RecentGamesList(props) {
               src={props.recentGames[0].championImageURL}
             />
           </span>
+          <span className="queue-description" />
           <span className="score">
             <span className="centered-image-helper" />
             <img

@@ -9,15 +9,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from 'header';
 import GameBox from 'game-box';
+import SearchBox from 'search-box';
 
-const Application = function render() {
-  return (
-    <div>
-      <Header />
-      <GameBox />
-    </div>
-  );
-};
+class Application extends React.Component {
+  constructor() {
+    super();
+    this.state = { recentGames: [] };
+    this.onRecentGamesLoad = this.onRecentGamesLoad.bind(this);
+  }
+  onRecentGamesLoad(data) {
+    this.setState({ recentGames: data.results });
+  }
+  render() {
+    return (
+      <div>
+        <Header />
+        <SearchBox onRecentGamesLoad={this.onRecentGamesLoad} />
+        <GameBox recentGames={this.state.recentGames} />
+      </div>
+    );
+  }
+}
+
 
 ReactDOM.render(
   <Application />,
