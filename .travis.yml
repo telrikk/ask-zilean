@@ -46,4 +46,4 @@ deploy:
   zip_file: deploy.zip
   on:
     repo: telrikk/ask-zilean
-    branch: deployment
+    branch: master
