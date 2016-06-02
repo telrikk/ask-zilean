@@ -1,6 +1,5 @@
 #/bin/bash
 
-export NODE_ENV=production
 mkdir -p /tmp/deploy/src/github.com/telrikk/ask-zilean/
 cd ${TRAVIS_BUILD_DIR}
 rm -rf dist
