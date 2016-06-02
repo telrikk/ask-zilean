@@ -31,10 +31,7 @@ script:
   - revel test github.com/telrikk/ask-zilean
 
 before_deploy:
-  # Lame way to make entire packaged build deploy to beanstalk
-  - rm ${TRAVIS_BUILD_DIR}/.gitignore
-  - git add ${TRAVIS_BUILD_DIR}/dist
-  - git add ${TRAVIS_BUILD_DIR}/Godeps/_workspace 
+  - zip deploy.zip -x'node_modules/*' -r ./
 
 deploy:
   provider: elasticbeanstalk
@@ -45,6 +42,8 @@ deploy:
   app: Ask Zilean
   env: askzilean-env
   bucket_name: ${AWS_BUCKET}
+  skip_cleanup: true
+  zip_file: deploy.zip
   on:
     repo: telrikk/ask-zilean
     branch: deployment
