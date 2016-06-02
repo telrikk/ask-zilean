@@ -3,6 +3,8 @@
 mkdir -p /tmp/deploy/src/github.com/telrikk/ask-zilean/
 cd ${TRAVIS_BUILD_DIR}
 rm -rf node_modules
+rm -rf dist
+npm run webpack-production
 cp -R ./ /tmp/deploy/src/github.com/telrikk/ask-zilean/
 cd /tmp/deploy/
 cp /tmp/deploy/src/github.com/telrikk/ask-zilean/Procfile ./
