@@ -30,6 +30,9 @@ script:
   - go test ./app/...
   - revel test github.com/telrikk/ask-zilean
 
+before_deploy:
+  - npm run webpack
+
 deploy:
   provider: elasticbeanstalk
   access_key_id: ${AWS_ACCESS_KEY}
@@ -38,7 +41,7 @@ deploy:
   region: us-east-1
   app: Ask Zilean
   env: askzilean-env
-  bucket_name: elasticbeanstalk-us-east-1-364043192931
+  bucket_name: ${AWS_BUCKET}
   skip_cleanup: true
   on:
     repo: telrikk/ask-zilean
