@@ -31,9 +31,12 @@ script:
   - revel test github.com/telrikk/ask-zilean
 
 before_deploy:
-  - mkdir -p github.com/telrikk/ask-zilean/
-  - mv *.* github.com/telrikk/ask-zilean/
-  - zip deploy.zip -x'github.com/telrikk/ask-zilean/node_modules/*' -r ./
+  - mkdir -p /tmp/deploy/github.com/telrikk/ask-zilean/
+  - rm -rf node_modules
+  - cp -R ./ /tmp/deploy/github.com/telrikk/ask-zilean/
+  - cd /tmp/deploy/
+  - zip ${TRAVIS_BUILD_DIR}/deploy.zip -x'github.com/telrikk/ask-zilean/node_modules/*' -r ./
+  - cd ${TRAVIS_BUILD_DIR}
 
 deploy:
   provider: elasticbeanstalk
