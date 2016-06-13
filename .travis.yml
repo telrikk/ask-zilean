@@ -43,7 +43,7 @@ deploy:
   env: askzilean-env
   bucket_name: ${AWS_BUCKET}
   skip_cleanup: true
-  zip_file: deploy.zip
+  zip_file: ask-zilean.zip
   on:
     repo: telrikk/ask-zilean
     branch: master

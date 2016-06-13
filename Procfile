@@ -1,1 +1,1 @@
-web: revel run github.com/telrikk/ask-zilean prod
+web: ./run.sh

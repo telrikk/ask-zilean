@@ -1,2 +1,1 @@
-build: go get -u github.com/revel/cmd/revel
-kill-revel: killall revel
+kill-revel: pkill -f run.sh && pkill -f ask-zilean
