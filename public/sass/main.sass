@@ -1,5 +1,7 @@
 $font-stack:    Helvetica, sans-serif
 $primary-color: #333
+$victory-color: #6ed56e
+$defeat-color: #a63935
 
 =border-radius($radius)
   -webkit-border-radius: $radius
@@ -141,6 +143,8 @@ body
   min-width: 150px
   text-align: center
   margin-right: 8%
+  padding-top: 25px
+  padding-bottom: 25px
 
 .minions
   width: 32px
@@ -185,6 +189,18 @@ body
   right: 15px
   top: 15px
 
+.outcome-text
+  font-size: 16px
+  font-weight: bold
+
+.victory-text
+  @extend .outcome-text
+  color: $victory-color
+
+.defeat-text
+  @extend .outcome-text
+  color: $defeat-color
+
 .results-bar
   border: rgba(255, 255, 255, 0.2) solid
   width: 10px
@@ -196,8 +212,8 @@ body
 
 .results-bar-victory
   @extend .results-bar
-  background-color: #6ed56e
+  background-color: $victory-color
 
 .results-bar-defeat
   @extend .results-bar
-  background-color: #a63935
+  background-color: $defeat-color
