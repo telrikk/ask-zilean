@@ -74,7 +74,7 @@ func (c App) RecentGames(name string) revel.Result {
 	}
 	var games []model.RecentGame
 	for _, recentGame := range recentGames {
-		translatedGame := translateRecentGame(recentGame, fullGameData, summonerID)
+		translatedGame := translateRecentGame(recentGame, fullGameData, summonerID, name)
 		if translatedGame.ID != 0 {
 			games = append(games, translatedGame)
 		}
@@ -84,29 +84,19 @@ func (c App) RecentGames(name string) revel.Result {
 	return c.RenderJson(response)
 }
 
-func translateRecentGame(game game.Game, gameData map[int]match.Detail, summonerID int) model.RecentGame {
+func translateRecentGame(game game.Game, gameData map[int]match.Detail, summonerID int, summonerName string) model.RecentGame {
 	translatedGame := new(model.RecentGame)
 	fullGame := gameData[game.GameID]
 	nameData := make(map[int]string)
-	summonerParticipantID := 0
-
 	for _, participant := range fullGame.ParticipantIdentities {
-		// HACK: bad data on Riot's side
-		if participant.Player.SummonerName == "" {
-			return *translatedGame
-		}
+		// HACK: bad data on Riot's side, will need to use summoner API for non-ranked games
 		nameData[participant.ParticipantID] = participant.Player.SummonerName
-		if participant.Player.SummonerID == summonerID {
-			summonerParticipantID = participant.ParticipantID
-		}
 	}
 	for _, player := range fullGame.Participants {
 		translatedPlayer := translatePlayer(player, nameData)
 		translatedGame.Players = append(translatedGame.Players, translatedPlayer)
-		if player.ParticipantID == summonerParticipantID {
-			translatedGame.Summoner = translatedPlayer
-		}
 	}
+	translatedGame.Summoner = translateSummoner(game, summonerName)
 	mapImageName := util.MapData().Data[strconv.Itoa(game.MapID)].Image.Full
 	translatedGame.MapImageURL = util.MapImagePrefix() + "map/" + mapImageName
 	translatedGame.ID = game.GameID
@@ -127,6 +117,30 @@ func translateRecentGame(game game.Game, gameData map[int]match.Detail, summoner
 	}
 	translatedGame.QueueDescription = description
 	return *translatedGame
+}
+
+func translateSummoner(game game.Game, summonerName string) model.Player {
+	translatedPlayer := new(model.Player)
+	translatedPlayer.SummonerName = summonerName
+	translatedPlayer.Kills = game.Stats.ChampionsKilled
+	translatedPlayer.Assists = game.Stats.Assists
+	translatedPlayer.Deaths = game.Stats.NumDeaths
+
+	championImageName := util.ChampionData().Data[strconv.Itoa(game.ChampionID)].Image.Full
+	translatedPlayer.ChampionImageURL = util.ChampionImagePrefix() + "champion/" + championImageName
+	translatedPlayer.ChampionName = util.ChampionData().Data[strconv.Itoa(game.ChampionID)].Name
+	translatedPlayer.Items = []model.Item{}
+	for _, ItemID := range []int{game.Stats.Item0, game.Stats.Item1, game.Stats.Item2,
+		game.Stats.Item3, game.Stats.Item4, game.Stats.Item5, game.Stats.Item6} {
+		if ItemID > 0 {
+			translatedPlayer.Items = append(translatedPlayer.Items, translateItem(ItemID))
+		}
+	}
+	translatedPlayer.CreepScore = game.Stats.MinionsKilled + game.Stats.NeutralMinionsKilled
+	translatedPlayer.Gold = game.Stats.GoldEarned
+	translatedPlayer.IsWinner = game.Stats.Win
+	return *translatedPlayer
+
 }
 
 func translatePlayer(player match.Participant, nameData map[int]string) model.Player {
