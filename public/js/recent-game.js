@@ -16,6 +16,8 @@ export default function RecentGame(props) {
   const gold = props.game.summoner.gold;
   const isWinner = props.game.summoner.isWinner;
   const barClass = isWinner ? 'results-bar-victory' : 'results-bar-defeat';
+  const outcomeTextClass = isWinner ? 'victory-text' : 'defeat-text';
+  const outcomeText = isWinner ? 'VICTORY' : 'DEFEAT';
   return (
     <li className="list-group-item">
       <span className={barClass} />
@@ -29,6 +31,7 @@ export default function RecentGame(props) {
           />
         </span>
         <span className="queue-description">
+          <div className={outcomeTextClass}>{outcomeText}</div>
           <div>{props.game.mapName}</div>
           <div>{props.game.queueDescription}</div>
         </span>
