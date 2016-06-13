@@ -10,4 +10,5 @@ mkdir ask-zilean
 cp Procfile ask-zilean
 cp Buildfile ask-zilean
 tar -C ask-zilean -zxvf ask-zilean.tar.gz
-zip -r ask-zilean.zip ask-zilean
+cd ask-zilean
+zip -r ../ask-zilean.zip *
